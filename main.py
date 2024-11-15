@@ -236,7 +236,7 @@ def create_notebook(notebook: NotebookCreateUpdate, current_user: User = Depends
     
     return {"message": "Notebook created successfully", "notebook_id": new_notebook.id}
 
-@app.put("/update_notebook/{notebook_id}")
+@app.put("/update_notebook/")
 def update_notebook(title: str, page_no: int, notebook: NotebookCreateUpdate, current_user: User = Depends(get_current_user)):
     print("Received notebook data:", notebook.dict())  # Inspect incoming data
 
